@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matthew Music</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -28,11 +29,12 @@
   </header>
 
   <!-- 首頁視覺區 Hero -->
-  <section id="home" class="hero">
-    <h1>Professional Audio. Immersive Sound.</h1>
-    <p>We create music and sound for games, films, and interactive media.</p>
+  <section class="hero-section">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Professional Audio. Immersive Sound.</h1>
+      <p>We create music and sound for games, films, and interactive media.</p>
+    </div>
   </section>
-
   <!-- 關於我們 About -->
   <section id="about" class="section">
     <h2>About Us</h2>
@@ -68,6 +70,12 @@
   </footer>
 
   <!-- 引入 GitHub JS 或主程式 -->
-  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // 動畫時間 (ms)
+    once: true      // 滑動一次後不再重複動畫
+  });
+</script>
 </body>
 </html>
