@@ -1,15 +1,15 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #0e0e0e;
-    color: #fff;
-    line-height: 1.6;
-  }
-  .navbar {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0e0e0e;
+  color: #fff;
+  line-height: 1.6;
+}
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,106 +19,141 @@
   top: 0;
   z-index: 100;
 }
-
-  .logo-container {
+.logo-container {
   display: flex;
- 
- 
 }
-
 .logo-img {
   height: 100px;
   margin-right: 10px;
 }
-
 .logo-text {
-   display: flex;
+  display: flex;
   flex-direction: column;
   color: white;
   font-size: 18px;
   line-height: 1.2;
 }
-  
-  .logo-text strong {
-    font-size: 20px; /* AUDIO 加大 */
-    font-weight: bold;
-    display: block;
-    text-align:left
-  }
-  .logo-link {
-   display: flex;
-  align-items: center; /* 垂直置中 */
+.logo-text strong {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  text-align: left;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   transition: opacity 0.3s ease;
 }
-
-.logo-link:hover 
-{
-  opacity: 0.7;               /* 淡出效果 */
+.logo-link:hover {
+  opacity: 0.7;
 }
-
-  .hero-section {
-    background-image: url('assets/peopleleft.jpg'); /* 改成你的實際路徑 */
-    background-size: contain;
-    background-position:left;
-    background-repeat: no-repeat;
-    padding: 300px 5px;
-    text-align: center;
-    color: white;
-     display: flex;
-    justify-content: center;
-  }
-  .hero-wrapper {
+.nav-links {
   display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #ff6600;
+}
+.hero-section {
+ background-image: url('assets/peopleleft.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+.hero-wrapper {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
-  width: 100%;
+  margin: 0 auto;
   gap: 40px;
   flex-wrap: wrap;
 }
-  
-  
-  .hero-content h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .hero-content p {
-    font-size: 16px;
-    color: #ccc;
-  }
-  
-  
-  .nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-  }
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  .nav-links a:hover {
-    color: #ff6600;
-  }
-  .hero {
-    padding: 100px 20px;
-    text-align: center;
-    background: #1a1a1a;
-  }
-  .section {
-    padding: 80px 20px;
-    border-bottom: 1px solid #333;
-  }
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #111;
-    font-size: 0.9em;
-    color: #999;
-  }
-  
+.hero-content {
+  flex: 1;
+  min-width: 280px;
+}
+.hero-content h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+.hero-content p {
+  font-size: 18px;
+  color: #ccc;
+}
+.hero-audio {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+.hero-audio button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #ff6600;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.hero-audio button:hover {
+  background-color: #e65c00;
+}
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 800px;
+}
+
+.hero-center h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.hero-center p {
+  font-size: 20px;
+  color: #ccc;
+}
+
+.hero-center button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-center button:hover {
+  background-color: #e65c00;
+}
+.section {
+  padding: 80px 20px;
+  border-bottom: 1px solid #333;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+  font-size: 0.9em;
+  color: #999;
+}

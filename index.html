@@ -30,12 +30,15 @@
   </header>
 
   <!-- 首頁視覺區 Hero -->
-  <section class="hero-section">
-    <div class="hero-content" data-aos="fade-down">
-      <h1>Professional Audio. Immersive Sound.</h1>
-      <p>We create music and sound for games, films, and interactive media.</p>
-    </div>
-  </section>
+  <section class="hero-section" id="home">
+  <div class="hero-center">
+    <h1>Professional Audio. Immersive Sound.</h1>
+    <p>We create music and sound for games, films, and interactive media.</p>
+    <button id="playButton">▶ Play Audio</button>
+    <audio id="bgAudio" src="assets/sample.mp3"></audio>
+  </div>
+</section>
+
   <!-- 關於我們 About -->
   <section id="about" class="section">
     <h2>About Us</h2>
@@ -70,13 +73,23 @@
     <p>&copy; 2025 MatthewMusic. All rights reserved.</p>
   </footer>
 
-  <!-- 引入 GitHub JS 或主程式 -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000, // 動畫時間 (ms)
-    once: true      // 滑動一次後不再重複動畫
-  });
-</script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // 播放控制
+    const playButton = document.getElementById('playButton');
+    const bgAudio = document.getElementById('bgAudio');
+
+    playButton.addEventListener('click', () => {
+      if (bgAudio.paused) {
+        bgAudio.play();
+        playButton.textContent = '⏸ Pause Audio';
+      } else {
+        bgAudio.pause();
+        playButton.textContent = '▶ Play Audio';
+      }
+    });
+  </script>
 </body>
 </html>
