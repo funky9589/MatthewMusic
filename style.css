@@ -67,9 +67,10 @@
     list-style: none;
   }
   .nav-links a {
+    color: white;
     text-decoration: none;
-    color: #fff;
-    transition: color 0.3s;
+    font-weight: bold;
+    transition: color 0.3s ease;
   }
   .nav-links a:hover {
     color: #ff6600;
