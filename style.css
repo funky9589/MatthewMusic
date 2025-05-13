@@ -52,7 +52,8 @@
   transition: opacity 0.3s ease;
 }
 
-.logo-link:hover {
+.logo-link:hover 
+{
   opacity: 0.7;               /* 淡出效果 */
 }
 
@@ -64,7 +65,19 @@
     padding: 300px 5px;
     text-align: center;
     color: white;
+     display: flex;
+    justify-content: center;
   }
+  .hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+  
   
   .hero-content h2 {
     font-size: 28px;
@@ -76,6 +89,7 @@
     font-size: 16px;
     color: #ccc;
   }
+  
   
   .nav-links {
     display: flex;
