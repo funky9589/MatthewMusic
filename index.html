@@ -32,19 +32,38 @@
   <!-- 首頁視覺區 Hero -->
   <section class="hero-section" id="home">
   <div class="hero-center">
-    <h1>Professional Audio. Immersive Sound.</h1>
-    <p>We create music and sound for games, films, and interactive media.</p>
-    <button id="playButton">▶ Play Audio</button>
-    <audio id="bgAudio" src="assets/sample.mp3"></audio>
+    <h1>每個音符都是一次內在的探索，我的音樂，點亮你我心中的微光，匯聚成改變世界的力量。</h1>
+    <p>Every note is an inner exploration. My music aims to ignite the small light within us, gathering to become a force for change in the world.</p>
+    <button id="playButton">▶</button>
+    <audio id="bgAudio" src="assets/Silent Horror.mp3"></audio>
   </div>
 </section>
+<section class="about-section" id="about">
+  <div class="about-wrapper">
+    <!-- 左側：文字 -->
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        大學主修文學，並於柏克里音樂學院線上學院就讀音樂作曲。這份跨領域的背景讓我能以獨特的視角融合敘事與音樂，
+        專精於各種風格的影視配樂與古典樂作曲。我曾師從國內外多位作曲家及音樂家，並在管樂團、打擊樂團及作曲比賽中屢獲佳績。
+        此外，我也積極參與作曲、流行音樂演出及合唱團的作曲與演出。期待能與您合作，將故事化為動人的旋律！
+        <br>
+        Greetings, all! I hold a university degree in literature and am currently studying music composition at Berklee Online. 
+        This interdisciplinary background allows me to uniquely blend narrative and music, 
+        specializing in diverse styles of film scoring and classical composition. 
+        I've studied with renowned composers and musicians both locally and internationally and have achieved numerous awards in wind bands, 
+        percussion ensembles, and composition competitions. Furthermore, I actively engage in songwriting, performing at pop music festivals, 
+        and composing and performing for choirs. I look forward to collaborating with you to transform stories into captivating melodies!
+      </p>
+    </div>
 
-  <!-- 關於我們 About -->
-  <section id="about" class="section">
-    <h2>About Us</h2>
-    <p>We are a creative studio specializing in audio production. Our team combines technical expertise with artistic vision to deliver high-quality sound design and music.</p>
-  </section>
-
+    <!-- 右側：圖片 -->
+    <div class="about-image">
+      <img src="assets/black.jpg" alt="Profile Picture" />
+      <!-- 如果你是上傳的圖片就寫成 /mnt/data/6e72f8bb-6e52-48c5-90d2-0232d7cef1a3.png -->
+    </div>
+  </div>
+</section>
   <!-- 服務區 Services -->
   <section id="services" class="section">
     <h2>Our Services</h2>
@@ -84,10 +103,10 @@
     playButton.addEventListener('click', () => {
       if (bgAudio.paused) {
         bgAudio.play();
-        playButton.textContent = '⏸ Pause Audio';
+        playButton.textContent = '⏸';
       } else {
         bgAudio.pause();
-        playButton.textContent = '▶ Play Audio';
+        playButton.textContent = '▶';
       }
     });
   </script>

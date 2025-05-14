@@ -63,7 +63,7 @@ body {
   color: #ff6600;
 }
 .hero-section {
- background-image: url('assets/peopleleft.jpg');
+ background-image: url('assets/myself.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -135,7 +135,7 @@ body {
 .hero-center button {
   padding: 12px 24px;
   font-size: 18px;
-  background-color: #ff6600;
+  background-color: #acacac;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -144,7 +144,54 @@ body {
 }
 
 .hero-center button:hover {
-  background-color: #e65c00;
+  background-color: transparent;
+}
+
+
+.about-section {
+  background-color: #0e0e0e;
+  padding: 80px 20px;
+  color: #fff;
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 .section {
   padding: 80px 20px;
