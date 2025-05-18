@@ -291,6 +291,30 @@ body {
   padding: 80px 20px;
   border-bottom: 1px solid #333;
 }
+.services-titles{
+  background: url("assets/people.jpg") no-repeat center center/cover;
+  background-size:cover; /* 原為 cover */
+  background-attachment: fixed; /* 讓背景固定，產生視差滾動效果 */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  background-position: center 20%;
+  padding-bottom: 60px;
+ 
+}
+.services-titles h1 {
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.services-titles p {
+  font-size: 32px;
+  
+  
+}
 
 .section h2 {
   font-size: 60px;
@@ -301,10 +325,13 @@ body {
 
 .service-grid {
   display: grid;
+  height: 400px; /* 你可以改成任何高度 */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
   max-width: 1200px;
+  max-height: 1000px;
   margin: 0 auto;
+  padding-top: 60px;
 }
 .service-item {
   background-color: #1a1a1a;
@@ -322,11 +349,7 @@ body {
   font-size: 36px;
   margin-bottom: 15px;
 }
-.service-title {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+
 .service-desc {
   font-size: 16px;
   color: #ccc;
