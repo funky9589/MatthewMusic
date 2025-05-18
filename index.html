@@ -8,7 +8,7 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-
+<div class="cursor-circle" id="cursorCircle"></div>
 <header class="navbar">
     <div class="logo-container">
       <a href="index.html#home" class="logo-link">
@@ -30,10 +30,18 @@
 
   <!-- 首頁視覺區 Hero -->
   <section class="hero-section" id="home">
+    
   <div class="hero-center">
-    <h1>每個音符都是一次內在的探索，我的音樂，點亮你我心中的微光，匯聚成改變世界的力量。</h1>
+    <h1 class="typewriter-text">每個音符都是一次內在的探索，我的音樂，點亮你我心中的微光，匯聚成改變世界的力量。</h1>
     <p>Every note is an inner exploration. My music aims to ignite the small light within us, gathering to become a force for change in the world.</p>
-    <button id="playButton">▶</button>
+    <div class="audio-control">
+  <button id="playButton">▶</button>
+  <div class="wave-container hidden">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+</div>
     <audio id="bgAudio" src="assets/Silent Horror.mp3"></audio>
   </div>
 </section>
@@ -41,8 +49,8 @@
   <div class="about-wrapper">
     <!-- 左側：文字 -->
     <div class="about-text">
-      <h2>About Me</h2>
-      <p>
+      <h2 data-aos="fade-up">About Me</h2>
+      <p data-aos="fade-in" data-aos-delay="200">
         大學主修文學，並於柏克里音樂學院線上學院就讀音樂作曲。這份跨領域的背景讓我能以獨特的視角融合敘事與音樂，
         專精於各種風格的影視配樂與古典樂作曲。我曾師從國內外多位作曲家及音樂家，並在管樂團、打擊樂團及作曲比賽中屢獲佳績。
         此外，我也積極參與作曲、流行音樂演出及合唱團的作曲與演出。期待能與您合作，將故事化為動人的旋律！
@@ -88,5 +96,9 @@
       }
     });
   </script>
+  <script src="js/main.js"></script>
+  <script src="js/typewriter.js"></script>
+  <script src="js/mouseEffect.js"></script>
+  
 </body>
 </html>
