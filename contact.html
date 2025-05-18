@@ -6,8 +6,9 @@
   <title>Services - Matthew Music</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
+<div class="cursor-circle" id="cursorCircle"></div>
 <body>
   <!-- Header（共用） -->
   <header class="navbar">
@@ -22,7 +23,7 @@
         <li><a href="index.html#home">Home</a></li>
         <li><a href="index.html#about">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Work</a></li>
+        <li><a href="portfolio.html">portfolio</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -36,20 +37,21 @@
   </section>
 
   <!-- Contact Info -->
-  <section class="contact-info">
-    <div class="info-block">
-      <h3>Projects</h3>
-      <p>Matthew 音樂製作</p>
-    </div>
-    <div class="info-block">
-      <h3>Email</h3>
-      <p>shaoyi0922@gmail.com</p>
-    </div>
-    <div class="info-block">
-      <h3>Location</h3>
-      <p>桃園市中壢區新中二街45-1號三樓</p>
-      <p>No. 45-1, Xinzhong 2nd St., Zhongli Dist., Taoyuan City , Taiwan (R.O.C.)</p>
-    </div>
+  <section class="contact-info" data-aos="fade-up">
+  <div class="info-block" data-aos="fade-up" data-aos-delay="100">
+    <h3>Projects</h3>
+    <p>Matthew 音樂製作</p>
+  </div>
+  <div class="info-block" data-aos="fade-up" data-aos-delay="200">
+    <h3>Email</h3>
+    <p>shaoyi0922@gmail.com</p>
+  </div>
+  <div class="info-block" data-aos="fade-up" data-aos-delay="300">
+    <h3>Location</h3>
+    <p>桃園市中壢區新中二街45-1號三樓</p>
+    <p>No. 45-1, Xinzhong 2nd St., Zhongli Dist., Taoyuan City , Taiwan (R.O.C.)</p>
+  </div>
+
     <div class="info-block socials">
       <h3>Socials</h3>
       <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -74,9 +76,12 @@
 </form>
   </section>
 
-
-
-
+<script src="js/main.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="js/mouseEffect.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
   <!-- Footer（共用） -->
   <footer>
     <p>&copy; 2025 MatthewMusic. All rights reserved.</p>
