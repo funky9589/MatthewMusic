@@ -292,10 +292,10 @@ body {
   border-bottom: 1px solid #333;
 }
 .services-titles{
-  background: url("assets/people.jpg") no-repeat center center/cover;
+  background: url("assets/people1.jpg") no-repeat center center/cover;
   background-size:cover; /* 原為 cover */
   background-attachment: fixed; /* 讓背景固定，產生視差滾動效果 */
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -309,13 +309,17 @@ body {
   font-size: 64px;
   font-weight: bold;
   margin-bottom: 10px;
+  
 }
 .services-titles p {
   font-size: 32px;
-  
-  
+  color:#d6d5d5
 }
-
+.service-title{
+  font-size: 2rem;
+  font-weight: bold;
+  font-weight: 700;
+}
 .section h2 {
   font-size: 60px;
   margin-bottom: 40px;
@@ -332,6 +336,7 @@ body {
   max-height: 1000px;
   margin: 0 auto;
   padding-top: 60px;
+  margin-bottom: 80px;
 }
 .service-item {
   background-color: #1a1a1a;
@@ -352,21 +357,25 @@ body {
 
 .service-desc {
   font-size: 16px;
-  color: #ccc;
+  color: #ccccccc4;
 }
 /* Hero */
 .contact-hero {
-  background: url("your-background.jpg") no-repeat center center/cover;
-  height: 100vh;
+   background: url("assets/people1.jpg") no-repeat center center/cover;
+  background-size:cover; /* 原為 cover */
+  background-attachment: fixed; /* 讓背景固定，產生視差滾動效果 */
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   text-align: center;
+  background-position: center 20%;
+  padding-bottom: 60px;
 }
 
 .contact-hero .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
   padding: 60px 20px;
 }
 
