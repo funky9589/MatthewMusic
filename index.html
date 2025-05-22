@@ -6,6 +6,9 @@
   <title>Matthew Music</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Three.js 和 FBXLoader -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/loaders/FBXLoader.js"></script>
 </head>
 <body>
 <div class="cursor-circle" id="cursorCircle"></div>
@@ -30,18 +33,18 @@
 
   <!-- 首頁視覺區 Hero -->
   <section class="hero-section" id="home">
-    
+  <canvas id="webglCanvas" class="webgl-canvas"></canvas> <!-- 新增 WebGL canvas -->
   <div class="hero-center">
     <h1 class="typewriter-text">每個音符都是一次內在的探索，我的音樂，點亮你我心中的微光，匯聚成改變世界的力量。</h1>
     <p>Every note is an inner exploration. My music aims to ignite the small light within us, gathering to become a force for change in the world.</p>
     <div class="audio-control">
-  <button id="playButton">▶</button>
-  <div class="wave-container hidden">
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-  </div>
-</div>
+      <button id="playButton">▶</button>
+      <div class="wave-container hidden">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+    </div>
     <audio id="bgAudio" src="assets/Silent Horror.mp3"></audio>
   </div>
 </section>
@@ -99,6 +102,6 @@
   <script src="js/main.js"></script>
   <script src="js/typewriter.js"></script>
   <script src="js/mouseEffect.js"></script>
-  
+  <script src="js/webgl.js"></script>
 </body>
 </html>

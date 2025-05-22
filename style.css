@@ -100,6 +100,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  background: linear-gradient(to bottom, #0e0e0e 95%, #fafa5e 5%); /* 90% 黑色，10% 黃色 */
 }
 .logo-container {
   display: flex;
@@ -227,6 +228,20 @@ body {
 
 .hero-center button:hover {
   background-color: transparent;
+}
+.webgl-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.6; /* 確保透明度不過低 */
+  filter: blur(1px); /* 輕微模糊，避免過於銳利 */
+}
+.hero-center {
+  position: relative; /* 確保文字和按鈕在 canvas 上方 */
+  z-index: 1;
 }
 .typewriter-text::after {
   content: "|";
