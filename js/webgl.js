@@ -27,24 +27,26 @@
         loader.load(
           'assets/note.fbx',
           (fbx1) => {
+            console.log('Successfully loaded note.fbx');
             noteModel = fbx1;
             noteModel.traverse((child) => {
               if (child.isMesh) {
-                child.material = new THREE.MeshPhongMaterial({ color: 0xFFFFFF, shininess: 50, transparent: true, opacity: 0.7 });
+                child.material = new THREE.MeshBasicMaterial({ color: 0xFFFFFF }); // 使用純白色材質，不依賴光照
               }
             });
-            noteModel.scale.set(0.05, 0.05, 0.05); // 調整縮放，根據實際模型大小微調
+            noteModel.scale.set(0.05, 0.05, 0.05);
 
             loader.load(
               'assets/quarternote.fbx',
               (fbx2) => {
+                console.log('Successfully loaded quarternote.fbx');
                 quarterNoteModel = fbx2;
                 quarterNoteModel.traverse((child) => {
                   if (child.isMesh) {
-                    child.material = new THREE.MeshPhongMaterial({ color: 0xFFFFFF, shininess: 50, transparent: true, opacity: 0.7 });
+                    child.material = new THREE.MeshBasicMaterial({ color: 0xFFFFFF });
                   }
                 });
-                quarterNoteModel.scale.set(0.05, 0.05, 0.05); // 同上
+                quarterNoteModel.scale.set(0.05, 0.05, 0.05);
                 resolve();
               },
               undefined,
@@ -66,7 +68,7 @@
     // 創建音符實例
     const createNote = (model) => {
       const note = model.clone();
-      note.position.set((Math.random() - 0.5) * 2, -3, 0); // 從底部隨機位置開始
+      note.position.set((Math.random() - 0.5) * 2, -2, 0); // 從更高的位置開始，避免遮蓋底部
       note.velocity = 0.015 + Math.random() * 0.005; // 上升速度
       note.fade = 1; // 透明度控制
       note.floatOffset = Math.random() * Math.PI * 2; // 隨機浮動偏移
@@ -81,7 +83,7 @@
 
     function spawnNote() {
       if (notes.length < maxNotes && noteModel && quarterNoteModel) {
-        const modelToUse = Math.random() > 0.5 ? noteModel : quarterNoteModel; // 隨機選擇模型
+        const modelToUse = Math.random() > 0.5 ? noteModel : quarterNoteModel;
         const note = createNote(modelToUse);
         notes.push(note);
         scene.add(note);
@@ -95,46 +97,45 @@
     }
     bgAudio.addEventListener('play', () => {
       clearInterval(spawnNoteInterval);
-      spawnInterval = 800; // 音樂播放時加快生成
+      spawnInterval = 800;
       startSpawning();
     });
     bgAudio.addEventListener('pause', () => {
       clearInterval(spawnNoteInterval);
-      spawnInterval = 1200; // 音樂暫停時減慢生成
+      spawnInterval = 1200;
       startSpawning();
     });
 
     // 加載模型後啟動動畫
     loadModels()
       .then(() => {
-        startSpawning(); // 初始啟動生成
+        console.log('Models loaded, starting animation');
+        startSpawning();
       })
       .catch((error) => {
         console.error('Failed to load models, stopping animation:', error);
-        // 停止動畫
         cancelAnimationFrame(animate);
         clearInterval(spawnNoteInterval);
       });
 
-    // 添加光源
-    const ambientLight = new THREE.AmbientLight(0x404040);
+    // 添加光源（即使使用 MeshBasicMaterial，也可以添加光源作為備用）
+    const ambientLight = new THREE.AmbientLight(0x808080); // 增加環境光亮度
     scene.add(ambientLight);
-    const pointLight = new THREE.PointLight(0xFFFFFF, 0.5, 100);
-    pointLight.position.set(5, 5, 5);
+    const pointLight = new THREE.PointLight(0xFFFFFF, 1, 100); // 增加點光源強度
+    pointLight.position.set(2, 2, 2); // 更靠近模型
     scene.add(pointLight);
 
     // 動畫：音符上升、淡出並輕微浮動
     function animate() {
       requestAnimationFrame(animate);
       notes.forEach((note, index) => {
-        note.position.y += note.velocity; // 上升
-        note.fade -= 0.003; // 緩慢淡出
-        note.position.x += Math.sin(Date.now() * 0.001 + note.floatOffset) * 0.005; // 輕微左右浮動
+        note.position.y += note.velocity;
+        note.fade -= 0.003;
+        note.position.x += Math.sin(Date.now() * 0.001 + note.floatOffset) * 0.005;
         note.traverse((child) => {
           if (child.isMesh) child.material.opacity = note.fade;
         });
 
-        // 當音符移出畫面或完全淡出時移除
         if (note.position.y > 3 || note.fade <= 0) {
           scene.remove(note);
           notes.splice(index, 1);
