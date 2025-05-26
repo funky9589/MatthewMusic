@@ -379,6 +379,126 @@ body {
   font-size: 16px;
   color: #ccccccc4;
 }
+.portfolio-section {
+  padding: 50px 20px;
+  text-align: center;
+  color: #fff;
+  background-color: #1a1a1a;
+}
+
+.portfolio-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.music-player {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.music-player h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.music-player audio {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.music-player .controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.music-player button {
+  background: #fff;
+  color: #1a1a1a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.music-player button:hover {
+  background: #ccc;
+}
+
+.progress-volume-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+
+.music-player .progress {
+  flex: 1;
+  max-width: 500px;
+  height: 5px;
+  background: #555;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.music-player .progress-bar {
+  height: 100%;
+  background: #fff;
+  width: 0;
+  border-radius: 5px;
+}
+
+.music-player select {
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.volume-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30px;
+  height: 100px; /* 確保滑塊有足夠高度 */
+}
+
+.volume-control #volumeSlider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 6px; /* 調整為垂直滑塊的寬度 */
+  height: 100px; /* 使用高度來控制滑塊長度 */
+  background: #555;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  writing-mode: vertical-lr; /* 標準化垂直方向 */
+  direction: rtl; /* 從下往上調整 */
+}
+
+.volume-control #volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #333;
+}
+
+.volume-control #volumeSlider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #333;
+}
 /* Hero */
 .contact-hero {
    background: url("assets/background.jpg") no-repeat center center/cover;
