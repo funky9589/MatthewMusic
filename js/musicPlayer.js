@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const trackSelect = document.getElementById('trackSelect');
   const currentTrack = document.getElementById('current-track');
   const volumeSlider = document.getElementById('volumeSlider');
+  const volumeBar = document.getElementById('volumeBar');
 
   // 音樂列表
   const tracks = [
@@ -28,15 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
     trackSelect.appendChild(option);
   });
 
+  // 儲存上一次音量值
+  let lastVolume = 1;
+
   // 初始化播放器
   function updateTrack() {
     const selectedOption = trackSelect.options[trackSelect.selectedIndex];
     audioPlayer.src = selectedOption.value;
     currentTrack.textContent = selectedOption.getAttribute('data-name');
     audioPlayer.load();
-    playPauseBtn.textContent = 'Play';
+    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
     progressBar.style.width = '0%';
-    audioPlayer.volume = volumeSlider.value; // 初始化音量
+    audioPlayer.volume = volumeSlider.value;
+    updateVolumeBar();
   }
 
   // 播放/暫停
@@ -45,10 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
       audioPlayer.play().catch(error => {
         console.error('播放失敗:', error);
       });
-      playPauseBtn.textContent = 'Pause';
+      playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
     } else {
       audioPlayer.pause();
-      playPauseBtn.textContent = 'Play';
+      playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
     }
   });
 
@@ -56,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   stopBtn.addEventListener('click', () => {
     audioPlayer.pause();
     audioPlayer.currentTime = 0;
-    playPauseBtn.textContent = 'Play';
+    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
     progressBar.style.width = '0%';
   });
 
@@ -80,18 +85,33 @@ document.addEventListener('DOMContentLoaded', () => {
   // 選擇音樂
   trackSelect.addEventListener('change', updateTrack);
 
-  // 音量控制
+  // 音量控制和靜音
   volumeSlider.addEventListener('input', () => {
     const volume = parseFloat(volumeSlider.value);
     audioPlayer.volume = volume;
-    console.log('音量已調整至:', volume); // 調試用
+    if (volume > 0) lastVolume = volume;
+    updateVolumeBar();
+    console.log('音量已調整至:', volume);
   });
 
-  // 確保音量滑塊變化時也能觸發更新
-  volumeSlider.addEventListener('change', () => {
-    const volume = parseFloat(volumeSlider.value);
-    audioPlayer.volume = volume;
+  // 點擊滑塊切換靜音
+  volumeSlider.addEventListener('click', () => {
+    if (audioPlayer.volume > 0) {
+      audioPlayer.volume = 0;
+      volumeSlider.value = 0;
+    } else {
+      audioPlayer.volume = lastVolume;
+      volumeSlider.value = lastVolume;
+    }
+    updateVolumeBar();
+    console.log('音量已切換至:', audioPlayer.volume);
   });
+
+  // 更新音量條
+  function updateVolumeBar() {
+    const volume = audioPlayer.volume;
+    volumeBar.style.height = `${volume * 100}px`;
+  }
 
   // 初始化第一首音樂
   updateTrack();

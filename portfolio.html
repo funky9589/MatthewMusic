@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matthew Music - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+   <!-- 引入 Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="cursor-circle" id="cursorCircle"></div>
@@ -28,21 +30,22 @@
     </nav>
   </header>
 
-  <!-- Portfolio Section -->
+   <!-- Portfolio Section -->
   <section id="portfolio" class="portfolio-section">
     <h2>Portfolio</h2>
     <div class="music-player">
       <h3 id="current-track">Track Name</h3>
       <audio id="audioPlayer" src="assets/music/Silent Horror.mp3"></audio>
       <div class="controls">
-        <button id="playPauseBtn">Play</button>
-        <button id="stopBtn">Stop</button>
+        <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+        <button id="stopBtn"><i class="fas fa-stop"></i></button>
       </div>
       <div class="progress-volume-container">
         <div class="progress" id="progress">
           <div class="progress-bar" id="progressBar"></div>
         </div>
         <div class="volume-control">
+          <div class="volume-bar" id="volumeBar"></div>
           <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" style="writing-mode: vertical-lr; direction: rtl;">
         </div>
       </div>

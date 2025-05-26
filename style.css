@@ -461,6 +461,28 @@ body {
   border: none;
   border-radius: 5px;
 }
+.music-player button {
+  background: #fff;
+  color: #1a1a1a;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.music-player button:hover {
+  background: #ccc;
+}
+
+.music-player button i {
+  font-size: 16px;
+}
 
 .volume-control {
   display: flex;
@@ -498,6 +520,15 @@ body {
   background: #fff;
   border-radius: 50%;
   border: 1px solid #333;
+}
+
+.volume-bar {
+  width: 10px;
+  height: 0;
+  background: #fff;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  transition: height 0.2s ease; /* 平滑過渡效果 */
 }
 /* Hero */
 .contact-hero {
