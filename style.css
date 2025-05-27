@@ -8,6 +8,7 @@ body {
   background-color: #0e0e0e;
   color: #fff;
   line-height: 1.6;
+  position: relative;
 }
 .ripple-container {
   position: fixed;
@@ -21,15 +22,15 @@ body {
 .ripple {
   position: absolute;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.5); /* 中空圓環，白色邊框 */
-  background: transparent; /* 移除填充，使其中空 */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
   transform: scale(0);
   animation: rippleAnim 0.6s linear;
   pointer-events: none;
 }
 @keyframes rippleAnim {
   to {
-    transform: scale(2);   /*波型大小 */
+    transform: scale(2);
     opacity: 0;
   }
 }
@@ -38,27 +39,23 @@ body {
   align-items: center;
   gap: 10px;
 }
-/* 音符 */
 .wave-container {
   display: flex;
   gap: 4px;
   height: 20px;
 }
-
 .wave {
   width: 4px;
   height: 100%;
   background: #ececec;
   animation: waveAnim 1s infinite ease-in-out;
 }
-
 .wave:nth-child(2) {
   animation-delay: 0.2s;
 }
 .wave:nth-child(3) {
   animation-delay: 0.4s;
 }
-
 @keyframes waveAnim {
   0%, 100% {
     transform: scaleY(1);
@@ -67,7 +64,6 @@ body {
     transform: scaleY(2);
   }
 }
-
 .wave-container.paused .wave {
   animation-play-state: paused;
 }
@@ -91,7 +87,6 @@ body {
   animation: floatUp linear infinite;
   opacity: 0.7;
 }
-
 @keyframes floatUp {
   0% {
     transform: translateY(0) scale(1);
@@ -214,18 +209,15 @@ body {
   gap: 20px;
   max-width: 800px;
 }
-
 .hero-center h1 {
   font-size: 36px;
   margin-bottom: 10px;
   color: #fff;
 }
-
 .hero-center p {
   font-size: 20px;
   color: #ccc;
 }
-
 .hero-center button {
   padding: 12px 24px;
   font-size: 18px;
@@ -236,7 +228,6 @@ body {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 .hero-center button:hover {
   background-color: transparent;
 }
@@ -260,18 +251,15 @@ body {
   margin-left: 2px;
   color: #ffffff;
 }
-
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
-
 .about-section {
   background-color: #0e0e0e;
   padding: 80px 20px;
   color: #fff;
 }
-
 .about-wrapper {
   display: flex;
   align-items: center;
@@ -281,43 +269,37 @@ body {
   margin: 0 auto;
   gap: 40px;
 }
-
 .about-text {
   flex: 1;
   min-width: 300px;
 }
-
 .about-text h2 {
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 16px;
 }
-
 .about-text p {
   font-size: 18px;
   line-height: 1.6;
   color: #ccc;
 }
-
 .about-image {
   flex: 1;
   min-width: 300px;
   text-align: center;
 }
-
 .about-image img {
   width: 100%;
   max-width: 400px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
-
 .section {
   padding: 80px 20px;
   border-bottom: 1px solid #333;
 }
 .services-titles {
-  background: url("assets/musicbackground.jpg") no-repeat center center/cover;
+  background: url('assets/musicbackground.jpg') no-repeat center center/cover;
   background-size: cover;
   background-attachment: fixed;
   height: 80vh;
@@ -355,7 +337,6 @@ body {
   text-align: center;
   color: #fff;
 }
-
 .service-grid {
   display: grid;
   height: 400px;
@@ -383,7 +364,6 @@ body {
   font-size: 36px;
   margin-bottom: 15px;
 }
-
 .service-desc {
   font-size: 16px;
   color: #ccccccc4;
@@ -393,38 +373,63 @@ body {
   text-align: center;
   color: #fff;
   background-color: #1a1a1a;
+  position: relative; /* 作為定位上下文 */
+  z-index: 3;
 }
-
 .portfolio-section h2 {
   font-size: 4em;
   margin-bottom: 20px;
 }
-
+.vinyl-container {
+  position: absolute;
+  top: 50%; /* 垂直居中 */
+  left: 50%; /* 水平居中 */
+  transform: translate(-50%, -50%); /* 精確調整到中心 */
+  z-index: 1; /* 低於 .portfolio-section 和 h2 */
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+.vinyl {
+  width: 500px;
+  height: 500px;
+  animation: spin 2s linear infinite;
+  animation-play-state: paused;
+  display: block;
+  margin: 0 auto; /* 確保在容器內居中 */
+  opacity: 0.5; /* 添加透明度 */
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .music-player {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
+  position: relative;
+  z-index: 4; /* 保持最上層 */
 }
-
 .music-player h3 {
   font-size: 1.8em;
   margin-bottom: 10px;
 }
-
 .music-player audio {
   width: 100%;
   margin-bottom: 10px;
 }
-
 .music-player .controls {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
 }
-
 .music-player button {
   background: #fff;
   color: #1a1a1a;
@@ -439,21 +444,17 @@ body {
   justify-content: center;
   transition: background 0.3s ease;
 }
-
 .music-player button:hover {
   background: #ccc;
 }
-
 .music-player button i {
   font-size: 16px;
 }
-
 .progress-volume-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .music-player .progress {
   flex: 1;
   max-width: 500px;
@@ -462,14 +463,12 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-
 .music-player .progress-bar {
   height: 100%;
   background: #fff;
   width: 0;
   border-radius: 5px;
 }
-
 .music-player select {
   width: 100%;
   padding: 5px;
@@ -479,9 +478,8 @@ body {
   border: none;
   border-radius: 5px;
 }
-
 .contact-hero {
-  background: url("assets/background.jpg") no-repeat center center/cover;
+  background: url('assets/background.jpg') no-repeat center center/cover;
   background-size: cover;
   background-attachment: fixed;
   height: 80vh;
@@ -493,30 +491,25 @@ body {
   background-position: center 20%;
   padding-bottom: 60px;
 }
-
 .contact-hero .overlay {
   background-color: rgba(0, 0, 0, 0);
   padding: 60px 20px;
 }
-
 .contact-hero h1 {
   font-size: 64px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-
 .contact-hero p {
   font-size: 20px;
   color: #ccc;
 }
-
 .contact-form-section {
   background-color: #0e0e0e;
   padding: 60px 20px;
   display: flex;
   justify-content: center;
 }
-
 .contact-form {
   max-width: 600px;
   width: 100%;
@@ -524,13 +517,11 @@ body {
   flex-direction: column;
   gap: 20px;
 }
-
 .contact-form h2 {
   font-size: 32px;
   color: #ff6600;
   text-align: center;
 }
-
 .contact-form input,
 .contact-form textarea {
   padding: 15px;
@@ -540,7 +531,6 @@ body {
   color: #fff;
   font-size: 16px;
 }
-
 .contact-form button {
   padding: 15px;
   background-color: #ff6600;
@@ -551,11 +541,9 @@ body {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 .contact-form button:hover {
   background-color: #f7f7f7;
 }
-
 .contact-info {
   display: flex;
   justify-content: space-around;
@@ -564,34 +552,31 @@ body {
   background-color: #151515;
   text-align: center;
 }
-
 .info-block {
   margin: 20px;
   flex: 1 1 200px;
 }
-
 .info-block h3 {
   font-size: 32px;
   color: #ff6600;
   margin-bottom: 10px;
 }
-
 .info-block p {
   font-size: 16px;
   text-align: center;
 }
-
 .info-block.socials a {
   margin: 0 10px;
   font-size: 20px;
   color: #fff;
   transition: color 0.3s ease;
 }
-
 .info-block.socials a:hover {
   color: #ff6600;
 }
 footer {
+  position: relative;
+  z-index: 4;
   text-align: center;
   padding: 20px;
   background-color: #111;
