@@ -373,39 +373,41 @@ body {
   text-align: center;
   color: #fff;
   background-color: #1a1a1a;
-  position: relative; /* 作為定位上下文 */
+  position: relative;
   z-index: 3;
+  overflow: hidden;
 }
 .portfolio-section h2 {
   font-size: 4em;
   margin-bottom: 20px;
 }
-.vinyl-container {
+.portfolio-section::before {
+content: '';
   position: absolute;
-  top: 50%; /* 垂直居中 */
-  left: 50%; /* 水平居中 */
-  transform: translate(-50%, -50%); /* 精確調整到中心 */
-  z-index: 1; /* 低於 .portfolio-section 和 h2 */
-  width: 100%;
-  max-width: 1200px;
-  text-align: center;
-}
-.vinyl {
-  width: 500px;
-  height: 500px;
-  animation: spin 2s linear infinite;
-  animation-play-state: paused;
-  display: block;
-  margin: 0 auto; /* 確保在容器內居中 */
-  opacity: 0.5; /* 添加透明度 */
-}
-@keyframes spin {
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  height: 700px;
+  background: url('assets/vinyl.png') no-repeat center center;
+  background-size: contain;
+  transform: translate(-50%, -50%); /* 居中 */
+  opacity: 0.5; /* 透明度 */
+  z-index: -1; /* 確保在內容後面 */
+  animation: spin 4s linear infinite; /* 旋轉動畫 */
+  animation-play-state: paused; /* 初始暫停 */
+  }
+
+  @keyframes spin {
   from {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
+}
+
+.portfolio-section.playing::before {
+  animation-play-state: running; /* 播放時旋轉 */
 }
 .music-player {
   max-width: 600px;

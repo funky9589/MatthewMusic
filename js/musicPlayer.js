@@ -6,13 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const progressBar = document.getElementById('progressBar');
   const trackSelect = document.getElementById('trackSelect');
   const currentTrack = document.getElementById('current-track');
-  const vinyl = document.querySelector('.vinyl');
-
-  // 檢查 vinyl 元素是否存在
-  if (!vinyl) {
-    console.error('Vinyl element not found!');
-    return;
-  }
+  const portfolioSection = document.querySelector('.portfolio-section'); // 獲取 portfolio-section
 
   // 音樂列表
   const tracks = [
@@ -42,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     audioPlayer.load();
     playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
     progressBar.style.width = '0%';
-    vinyl.style.animationPlayState = 'paused'; // 確保初始暫停
+    portfolioSection.classList.remove('playing'); // 初始暫停
   }
 
   // 播放/暫停
@@ -52,11 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('播放失敗:', error);
       });
       playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-      vinyl.style.animationPlayState = 'running'; // 播放時旋轉
+      portfolioSection.classList.add('playing'); // 播放時旋轉
     } else {
       audioPlayer.pause();
       playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-      vinyl.style.animationPlayState = 'paused'; // 暫停時停止
+      portfolioSection.classList.remove('playing'); // 暫停時停止
     }
   });
 
@@ -66,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     audioPlayer.currentTime = 0;
     playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
     progressBar.style.width = '0%';
-    vinyl.style.animationPlayState = 'paused'; // 停止時暫停
+    portfolioSection.classList.remove('playing'); // 停止時暫停
   });
 
   // 更新進度條
