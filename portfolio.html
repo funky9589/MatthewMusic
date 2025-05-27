@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matthew Music - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-   <!-- 引入 Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <div class="cursor-circle" id="cursorCircle"></div>
+  <div class="ripple-container" id="rippleContainer"></div>
 
-   <!-- Header（共用） -->
   <header class="navbar">
     <div class="logo-container">
       <a href="index.html#home" class="logo-link">
@@ -30,7 +28,6 @@
     </nav>
   </header>
 
-   <!-- Portfolio Section -->
   <section id="portfolio" class="portfolio-section">
     <h2>Portfolio</h2>
     <div class="music-player">
@@ -44,20 +41,14 @@
         <div class="progress" id="progress">
           <div class="progress-bar" id="progressBar"></div>
         </div>
-        <div class="volume-control">
-          <div class="volume-bar" id="volumeBar"></div>
-          <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" style="writing-mode: vertical-lr; direction: rtl;">
-        </div>
       </div>
       <select id="trackSelect"></select>
     </div>
   </section>
 
-  <!-- Footer（共用） -->
   <footer>
     <p>© 2025 MatthewMusic. All rights reserved.</p>
   </footer>
-
 
   <script src="js/mouseEffect.js"></script>
   <script src="js/musicPlayer.js"></script>

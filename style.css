@@ -9,18 +9,29 @@ body {
   color: #fff;
   line-height: 1.6;
 }
-.cursor-circle {
-  position:fixed;
+.ripple-container {
+  position: fixed;
   top: 0;
   left: 0;
-  width: 20px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease;
   z-index: 9999;
+}
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5); /* 中空圓環，白色邊框 */
+  background: transparent; /* 移除填充，使其中空 */
+  transform: scale(0);
+  animation: rippleAnim 0.6s linear;
+  pointer-events: none;
+}
+@keyframes rippleAnim {
+  to {
+    transform: scale(2);   /*波型大小 */
+    opacity: 0;
+  }
 }
 .audio-control {
   display: flex;
@@ -100,7 +111,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: linear-gradient(to bottom, #0e0e0e 95%, #fafa5e 5%); /* 90% 黑色，10% 黃色 */
+  background: linear-gradient(to bottom, #0e0e0e 95%, #fafa5e 5%);
 }
 .logo-container {
   display: flex;
@@ -143,10 +154,10 @@ body {
   transition: color 0.3s ease;
 }
 .nav-links a:hover {
-  color: #ff6600;
+  color: #ffd900;
 }
 .hero-section {
- background-image: url('assets/myself.jpg');
+  background-image: url('assets/myself.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -236,25 +247,24 @@ body {
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 0.6; /* 確保透明度不過低 */
-  filter: blur(1px); /* 輕微模糊，避免過於銳利 */
+  opacity: 0.6;
+  filter: blur(1px);
 }
 .hero-center {
-  position: relative; /* 確保文字和按鈕在 canvas 上方 */
+  position: relative;
   z-index: 1;
 }
 .typewriter-text::after {
   content: "|";
   animation: blink 0.7s infinite;
   margin-left: 2px;
-  color: #ffffff; /* 可調成你要的色 */
+  color: #ffffff;
 }
 
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
-
 
 .about-section {
   background-color: #0e0e0e;
@@ -306,10 +316,10 @@ body {
   padding: 80px 20px;
   border-bottom: 1px solid #333;
 }
-.services-titles{
+.services-titles {
   background: url("assets/musicbackground.jpg") no-repeat center center/cover;
-  background-size:cover; /* 原為 cover */
-  background-attachment: fixed; /* 讓背景固定，產生視差滾動效果 */
+  background-size: cover;
+  background-attachment: fixed;
   height: 80vh;
   display: flex;
   align-items: center;
@@ -318,24 +328,23 @@ body {
   text-align: center;
   background-position: center 20%;
   padding-bottom: 60px;
- color:#fccb6a;
- background-color: rgba(0, 0, 0, 0.5); /* 深色半透明底 */
- padding: 8px;
- border-radius: 4px;
- text-shadow: 6px 4px 4px rgba(0, 0, 0, 0.4);
+  color: #fccb6a;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  border-radius: 4px;
+  text-shadow: 6px 4px 4px rgba(0, 0, 0, 0.4);
 }
 .services-titles h1 {
   font-size: 64px;
   font-weight: bold;
   margin-bottom: 10px;
-  
 }
 .services-titles p {
   font-size: 32px;
-  color:#ffffff;
-   font-weight: bold;
+  color: #ffffff;
+  font-weight: bold;
 }
-.service-title{
+.service-title {
   font-size: 2rem;
   font-weight: bold;
   font-weight: 700;
@@ -349,7 +358,7 @@ body {
 
 .service-grid {
   display: grid;
-  height: 400px; /* 你可以改成任何高度 */
+  height: 400px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
   max-width: 1200px;
@@ -420,19 +429,28 @@ body {
   background: #fff;
   color: #1a1a1a;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 50%;
   cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
 }
 
 .music-player button:hover {
   background: #ccc;
 }
 
+.music-player button i {
+  font-size: 16px;
+}
+
 .progress-volume-container {
   display: flex;
   align-items: center;
-  gap: 15px;
   justify-content: center;
 }
 
@@ -461,80 +479,11 @@ body {
   border: none;
   border-radius: 5px;
 }
-.music-player button {
-  background: #fff;
-  color: #1a1a1a;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
-}
 
-.music-player button:hover {
-  background: #ccc;
-}
-
-.music-player button i {
-  font-size: 16px;
-}
-
-.volume-control {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30px;
-  height: 100px; /* 確保滑塊有足夠高度 */
-}
-
-.volume-control #volumeSlider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 6px; /* 調整為垂直滑塊的寬度 */
-  height: 100px; /* 使用高度來控制滑塊長度 */
-  background: #555;
-  border-radius: 3px;
-  outline: none;
-  cursor: pointer;
-  writing-mode: vertical-lr; /* 標準化垂直方向 */
-  direction: rtl; /* 從下往上調整 */
-}
-
-.volume-control #volumeSlider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
-  background: #fff;
-  border-radius: 50%;
-  border: 1px solid #333;
-}
-
-.volume-control #volumeSlider::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  background: #fff;
-  border-radius: 50%;
-  border: 1px solid #333;
-}
-
-.volume-bar {
-  width: 10px;
-  height: 0;
-  background: #fff;
-  border-radius: 3px;
-  margin-bottom: 5px;
-  transition: height 0.2s ease; /* 平滑過渡效果 */
-}
-/* Hero */
 .contact-hero {
-   background: url("assets/background.jpg") no-repeat center center/cover;
-  background-size:cover; /* 原為 cover */
-  background-attachment: fixed; /* 讓背景固定，產生視差滾動效果 */
+  background: url("assets/background.jpg") no-repeat center center/cover;
+  background-size: cover;
+  background-attachment: fixed;
   height: 80vh;
   display: flex;
   align-items: center;
@@ -560,7 +509,7 @@ body {
   font-size: 20px;
   color: #ccc;
 }
-/* Contact Form */
+
 .contact-form-section {
   background-color: #0e0e0e;
   padding: 60px 20px;
@@ -607,7 +556,6 @@ body {
   background-color: #f7f7f7;
 }
 
-/* Info Section */
 .contact-info {
   display: flex;
   justify-content: space-around;
