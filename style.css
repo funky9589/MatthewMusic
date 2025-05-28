@@ -378,7 +378,7 @@ body {
   overflow: hidden;
 }
 .portfolio-section h2 {
-  font-size: 4em;
+  font-size: 6em;
   margin-bottom: 20px;
 }
 .portfolio-section::before {
@@ -417,9 +417,11 @@ content: '';
   border-radius: 10px;
   position: relative;
   z-index: 4; /* 保持最上層 */
+  
 }
+
 .music-player h3 {
-  font-size: 1.8em;
+  font-size: 2.5em;
   margin-bottom: 10px;
 }
 .music-player audio {
@@ -451,6 +453,21 @@ content: '';
 }
 .music-player button i {
   font-size: 16px;
+}
+.music-player select {
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px; /* 調整字型大小，例如 16px */
+  cursor: pointer; /* 增加可點擊提示 */
+  outline: none; /* 移除預設外框 */
+}
+.music-player select:hover {
+  background: #444; /* 懸停時背景變暗 */
 }
 .progress-volume-container {
   display: flex;
