@@ -541,7 +541,7 @@ content: '';
 }
 .contact-form h2 {
   font-size: 32px;
-  color: #ff6600;
+  color: #d1c40a;
   text-align: center;
 }
 .contact-form input,
@@ -580,7 +580,7 @@ content: '';
 }
 .info-block h3 {
   font-size: 32px;
-  color: #ff6600;
+  color: #d1c40a;
   margin-bottom: 10px;
 }
 .info-block p {
