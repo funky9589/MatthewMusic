@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-<div class="ripple-container" id="rippleContainer"></div>
+  <div class="ripple-container" id="rippleContainer"></div>
   <!-- 導覽列 Navigation -->
   <header class="navbar">
     <div class="logo-container">
@@ -29,41 +29,130 @@
   </header>
 
   <!-- Services 主內容 -->
-   <section class="services-titles">
+  <section class="services-titles">
     <div class="overlay">
       <h1>Music Composition <br>
-        and <br>Music Arrangement</h1>
+        And <br>Music Arrangement</h1>
       <p>我們提供的音樂服務</p>
     </div>
   </section>
-    <div class="service-grid">
-      <div class="service-item">
+  <section class="services-section">
+    <div class="service-item">
+      <div class="service-left">
         <div class="service-icon"><i class="fa-solid fa-film"></i></div>
-        <div class="service-title">Music Composition</div>
-        <div class="service-desc">Original scores tailored for film, games, and media, blending classical and modern aesthetics.</div>
+        <div class="service-title">影視配樂<br>（Film / TV Scoring）</div>
       </div>
-      <div class="service-item">
-        <div class="service-icon"><i class="fas fa-headphones-alt"></i></div>
-        <div class="service-title">Sound Design</div>
-        <div class="service-desc">Immersive sonic textures, ambient soundscapes, and dynamic audio effects crafted with precision.</div>
-      </div>
-      <div class="service-item">
-        <div class="service-icon"><i class="fa-solid fa-microphone"></i></div>
-        <div class="service-title">Voiceover Recording</div>
-        <div class="service-desc">Professional voice capture and editing, including direction and tone matching for your story.</div>
-      </div>
-      <div class="service-item">
-        <div class="service-icon"><i class="fas fa-gamepad"></i></div>
-        <div class="service-title">Game Music</div>
-        <div class="service-desc">Integration into Unity or middleware like FMOD/Wwise for interactive, responsive experiences.</div>
+      <div class="service-right">
+        <h2>服務內容：</h2>
+            為短片、紀錄片、劇情片、YouTube頻道等量身打造原創音樂。根據劇情結構安排情緒線與音樂動機。
+            <br>
+        <h2><i class="fa-solid fa-money-check-dollar"></i> 價格方案：</h2>
+        <ul>
+          <li>基礎方案（≤1分鐘）：NT$3,000–5,000</li>
+          <li>標準方案（1–3分鐘）：NT$6,000–12,000</li>
+          <li>專業方案（3–10分鐘）：NT$13,000–30,000</li>
+        </ul>
       </div>
     </div>
+    <!-- 可根據需要添加更多服務項目 -->
   </section>
-<script src="js/mouseEffect.js"></script>
+  <section class="services-section">
+    <div class="service-item">
+      <div class="service-left">
+        <div class="service-icon"><i class="fa-solid fa-rectangle-ad"></i></div>
+        <div class="service-title">廣告配樂<br>（Commercial / Product Music）</div>
+      </div>
+      <div class="service-right">
+        <h2>服務內容：</h2>
+            為廣告短片、品牌宣傳、社群影片製作主題音樂。根據品牌語言與受眾設計風格（電子、爵士、動感節奏等
+            <br>
+        <h2><i class="fa-solid fa-money-check-dollar"></i> 價格方案：</h2>
+        <ul>
+          <li>速成方案	≤30秒	 快速交件、適合IG短片／Reels等     NT$3,000–6,000	</li>
+          <li>專案方案	30秒–1分鐘	品牌主題設計＋混音＋修正      NT$7,000–15,000	</li>
+          <li>高階方案	1–2分鐘	全客製、多版本輸出（如logo音樂）  NT$16,000–30,000	</li>
+        </ul>
+      </div>
+    </div>
+    <!-- 可根據需要添加更多服務項目 -->
+  </section>
+  <section class="services-section">
+    <div class="service-item">
+      <div class="service-left">
+        <div class="service-icon"><i class="fa-solid fa-gamepad"></i></i></div>
+        <div class="service-title">遊戲配樂<br>（Game Music）</div>
+      </div>
+      <div class="service-right">
+        <h2>服務內容：</h2>
+            為2D/3D遊戲設計背景音樂、主題曲、戰鬥音樂、角色音樂等。音樂可支援循環播放（loop）或事件觸發
+
+            <br>
+        <h2><i class="fa-solid fa-money-check-dollar"></i> 價格方案：</h2>
+        <ul>
+          <li> Loop方案	30–60秒背景音樂／角色音樂 NT$3,500–7,000</li>
+          <li>主題曲方案	1–2分鐘主題音樂	NT$10,000–20,000</li>
+          <li>遊戲完整音樂	NT$30,000–80,000	遊戲配樂全包（包含角色、背景、觸發事件音效等）</li>
+        </ul>
+      </div>
+    </div>
+    <!-- 可根據需要添加更多服務項目 -->
+  </section>
+  <section class="services-section">
+    <div class="service-item">
+      <div class="service-left">
+        <div class="service-icon"><i class="fa-solid fa-music"></i></i></i></div>
+        <div class="service-title">音樂編曲服務項目<br>(Arranging & Notation）</div>
+      </div>
+      <div class="service-right">
+        <h2>服務內容：</h2>
+            接收 MIDI 檔案（可接受 DAW 匯出格式）<br>
+            根據指定樂器清理節奏與音符邏輯<br>
+            編寫正確拍號、調號、力度、表情記號<br>
+            完整排版後輸出 PDF 樂譜、音訊示意（MIDI音源）
+
+            <br>
+        <h2><i class="fa-solid fa-money-check-dollar"></i> 價格方案：</h2>
+        <ul>
+          <li> 單一樂器如鋼琴、提琴等	NT$1,500–3,000	</li>
+          <li>小編制（2–5人）如室內樂或爵士小團NT$3,500–7,000	</li>
+          <li>大編制（>6人）	 如大型樂團、流行樂團等NT$8,000–15,000	</li>
+        </ul>
+      </div>
+    </div>
+    <!-- 可根據需要添加更多服務項目 -->
+  </section>
+
+  <section class="services-section">
+    <div class="service-item">
+      <div class="service-left">
+        <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <div class="service-title">旋律＋和弦 → 完整樂曲<br>（Arrangement from Melody & Chords）</div>
+      </div>
+      <div class="service-right">
+        <h2>服務內容：</h2>
+            根據你的旋律＋和弦草稿編曲<br>
+            適用於：流行歌曲、古典音樂、爵士編曲、電影音樂等<br>
+            提供鋼琴伴奏、弦樂、節奏組、和聲、樂器選配建議<br>
+            可選擇樂器組合（鋼琴伴奏、小樂團、Orchestral、電子等）
+
+            <br>
+        <h2><i class="fa-solid fa-money-check-dollar"></i> 價格方案：</h2>
+        <ul>
+          <li>簡單鋼琴伴奏版	適合演唱比賽或彈唱伴奏NT$2,000–4,000 </li>
+          <li>標準流行編曲版	完整節奏組、和聲、樂器分配NT$5,000–10,000	</li>
+          <li>古典／弦樂編曲版包含弦樂配器或室內樂編制NT$8,000–18,000	</li>
+          <li>電影／遊戲風格	含氣氛設計與混音雛形輸出NT$12,000–30,000</li>
+</li>
+        </ul>
+      </div>
+    </div>
+    <!-- 可根據需要添加更多服務項目 -->
+  </section>
+  <script src="js/mouseEffect.js"></script>
   <!-- 頁尾 Footer -->
   <footer>
-    <p>&copy; 2025 MatthewMusic. All rights reserved.</p>
+    <p>© 2025 MatthewMusic. All rights reserved.</p>
   </footer>
-
 </body>
+</html>
 </html>

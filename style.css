@@ -297,10 +297,6 @@ body {
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
-.section {
-  padding: 80px 20px;
-  border-bottom: 1px solid #333;
-}
 .services-titles {
   background: url('assets/musicbackground.jpg') no-repeat center center/cover;
   background-size: cover;
@@ -319,27 +315,44 @@ body {
   border-radius: 4px;
   text-shadow: 6px 4px 4px rgba(0, 0, 0, 0.4);
 }
+
+/* 服務標題 h1 */
 .services-titles h1 {
   font-size: 64px;
   font-weight: bold;
   margin-bottom: 10px;
 }
+
+/* 服務標題 p */
 .services-titles p {
   font-size: 32px;
   color: #ffffff;
   font-weight: bold;
 }
-.service-title {
-  font-size: 2rem;
-  font-weight: bold;
-  font-weight: 700;
+
+/* 服務內容部分 */
+.services-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
+
+/* 區塊樣式 */
+.section {
+  padding: 80px 20px;
+  border-bottom: 1px solid #333;
+}
+
+/* 區塊標題 */
 .section h2 {
   font-size: 60px;
   margin-bottom: 40px;
   text-align: center;
   color: #fff;
 }
+
+/* 服務網格 */
 .service-grid {
   display: grid;
   height: 400px;
@@ -351,25 +364,95 @@ body {
   padding-top: 60px;
   margin-bottom: 80px;
 }
+
+/* 服務項目 */
 .service-item {
+  width: 100%;
+  max-width: 1200px;
+  height: 50vh;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #1a1a1a;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid #2e2e2e;
 }
+
+/* 服務項目滑過效果 */
 .service-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
-.service-icon {
-  font-size: 36px;
-  margin-bottom: 15px;
+
+/* 服務項目左側 */
+.service-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
+/* 服務圖標 */
+.service-icon {
+  font-size: 64px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* 服務標題 */
+.service-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* 服務項目右側 */
+.service-right {
+  flex: 1;
+  padding-left: 20px;
+  color: #fff;
+}
+
+/* 服務價格標題 */
+.service-right h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* 服務價格列表 */
+.service-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* 服務價格項目 */
+.service-right li {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* 服務描述 */
 .service-desc {
   font-size: 16px;
   color: #ccccccc4;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .service-item {
+    flex-direction: column;
+    height: auto;
+  }
+  .service-right {
+    padding-left: 0;
+    margin-top: 20px;
+  }
 }
 .portfolio-section {
   padding: 50px 20px;
